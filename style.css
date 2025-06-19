@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary: #ff0066;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  background: #ffffff;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 1s;
+  z-index: 1300;
+}
+
+header.active {
+  background-color: #ffffff;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  font-family: "Great Vibes", cursive;
+  font-size: 40px;
+  color: #000000;
+  letter-spacing: 2px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.menu {
+  color: #000000;
+  font-size: 2em;
+  transition: 0.5s;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav li {
+  list-style: none;
+  margin: 0 20px;
+}
+
+.nav li a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 300;
+  padding: 10px;
+}
+
+.nav li a:hover,
+.nav li a:active {
+  color: var(--primary);
+}
+
+.search {
+  position: relative;
+  width: 300px;
+  height: 40px;
+  transition: 0.5s;
+}
+
+.search input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #000000;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  padding: 0 10px 0 15px;
+}
+
+.search input::placeholder {
+  color: #000000;
+  text-transform: uppercase;
+  font-weight: 350;
+}
+
+.search ion-icon {
+  font-size: 1.4em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  padding-left: 10px;
+  color: #000000;
+  cursor: pointer;
+  border-left: 1px solid #000000;
+}
