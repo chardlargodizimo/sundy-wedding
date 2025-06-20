@@ -120,3 +120,177 @@ header.active {
   cursor: pointer;
   border-left: 1px solid #000000;
 }
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.banner::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bg-slide .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(0) translate(-50%, -50%);
+  width: 60vw;
+  z-index: 1100;
+  transition: ease-in-out 3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.bg-slide .content h1 {
+  font-size: 8em;
+  text-transform: uppercase;
+}
+
+.bg-slide .content p {
+  font-family: "Great Vibes", cursive;
+  font-weight: 200;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+.bg-slide.active .content {
+  transform: scale(1) translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.circle {
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(0, 0) rotateZ(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: 3s;
+}
+
+.circle.bg {
+  background: transparent;
+  width: 140vw;
+  height: 140vw;
+  border-radius: 0;
+}
+
+.circle.large {
+  width: 70vw;
+  height: 70vw;
+}
+
+.circle.small {
+  width: 35vw;
+  height: 35vw;
+}
+
+.circle img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.circle.bg img {
+  border-radius: 0;
+}
+
+.circle.large img {
+  transform: scale(2);
+}
+
+.circle.small img {
+  transform: scale(4);
+}
+
+.bg-slide.active .circle.bg {
+  transform: translate(0, 0) rotateZ(-360deg);
+  opacity: 1;
+  visibility: visible;
+}
+
+.bg-slide.active .circle.large {
+  transform: translate(0, 0) rotateZ(720deg);
+  opacity: 1;
+  visibility: visible;
+}
+
+.bg-slide.active .circle.small {
+  transform: translate(0, 0) rotateZ(-720deg);
+  opacity: 1;
+  visibility: visible;
+}
+
+.slide-loader {
+  position: absolute;
+  z-index: 1100;
+  bottom: 50px;
+  right: 100px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 0;
+}
+
+.slide-loader li {
+  list-style: none;
+  display: flex;
+  align-items: end;
+}
+
+.slide-loader li a {
+  text-decoration: none;
+  color: #111111;
+  font-size: 2em;
+  font-weight: 800;
+  transition: 0.5s;
+  line-height: 1em;
+  cursor: pointer;
+  padding: 0;
+}
+
+.slide-loader li a.active,
+.slide-loader li a:hover {
+  font-size: 4em;
+}
+
+.slide-loader::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -70%;
+  width: 100px;
+  height: 2px;
+  background: #111111;
+}
