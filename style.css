@@ -385,3 +385,29 @@ header.active {
     transform: rotateZ(360deg);
   }
 }
+
+section {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  top: 100vh;
+  bottom: 0;
+  background: #ffffff;
+  transition: ease-in-out 1s;
+  transform-origin: bottom;
+  z-index: 1100;
+  opacity: 0;
+}
+
+section::-webkit-scrollbar {
+  display: none;
+}
+
+section.section-show {
+  padding: 150px 100px 100px;
+  top: 0;
+  height: auto;
+  min-height: 100vh;
+  overflow-y: visible;
+  opacity: 1;
+}

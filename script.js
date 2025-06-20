@@ -23,3 +23,38 @@ window.addEventListener("load", () => {
     });
   });
 });
+
+//activate sections
+const sectionNavigator = (name) => {
+  let sections = document.querySelectorAll("section");
+  let header = document.querySelector("header");
+  sections.forEach((section) => {
+    section.classList.remove("section-show");
+    if (section.classList.contains(name)) {
+      section.classList.add("section-show");
+      header.classList.add("active");
+    }
+  });
+};
+
+//navigation to sections
+window.addEventListener("load", () => {
+  const navList = document.querySelectorAll(".nav-btn");
+  navList.forEach((nav) => {
+    nav.addEventListener("click", function (e) {
+      e.preventDefault();
+      navList.forEach((el) => {
+        el.classList.remove("active");
+      });
+      this.classList.add("active");
+      sectionNavigator(this.getAttribute("data-target"));
+      screen.width < 768 && toggleMenu();
+    });
+  });
+});
+
+//reset header to initial state
+const resetHeader = () => {
+  let header = document.querySelector("header");
+  header.classList.remove("active");
+};

@@ -19,16 +19,16 @@
       <a href="" class="menu"><ion-icon name="menu-outline"></ion-icon></a>
       <ul class="nav">
         <li>
-          <a href="#" class="nav-btn active"
-            ><ion-icon name="home-outline"></ion-icon
-          ></a>
+          <a href="#" class="nav-btn active" onclick="resetHeader();">
+            <ion-icon name="home-outline"></ion-icon>
+          </a>
         </li>
-        <li><a href="#" class="nav-btn" data-target="About">About</a></li>
-        <li><a href="#" class="nav-btn" data-target="Services">Services</a></li>
+        <li><a href="#" class="nav-btn" data-target="about">about</a></li>
+        <li><a href="#" class="nav-btn" data-target="services">services</a></li>
         <li>
-          <a href="#" class="nav-btn" data-target="Portfolio">Portfolio</a>
+          <a href="#" class="nav-btn" data-target="gallery">gallery</a>
         </li>
-        <li><a href="#" class="nav-btn" data-target="Contact">Contact</a></li>
+        <li><a href="#" class="nav-btn" data-target="contact">contact</a></li>
       </ul>
       <div class="search">
         <input type="text" placeholder="Search" /><ion-icon
@@ -139,6 +139,19 @@
         </a>
       </div>
     </div>
+
+    <!-- main page -->
+    <main>
+      <!-- about section -->
+      <section id="about" class="about"></section>
+      <!-- services section -->
+      <section id="services" class="services"></section>
+      <!-- gallery section -->
+      <section id="gallery" class="gallery"></section>
+      <!-- contact section -->
+      <section id="contact" class="contact"></section>
+    </main>
+
     <!-- javascript vendors -->
     <script
       type="module"
