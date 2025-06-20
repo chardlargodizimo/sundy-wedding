@@ -294,3 +294,94 @@ header.active {
   height: 2px;
   background: #111111;
 }
+
+.share {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1200;
+}
+
+.share::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  transform: translateX(-50%);
+  top: -120%;
+  height: 100px;
+  width: 2px;
+  background: #111111;
+}
+
+.share p {
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #111111;
+}
+
+.share a {
+  text-decoration: none;
+  color: #111111;
+}
+
+.share a ion-icon {
+  font-size: 1.8em;
+}
+
+.lead {
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.move-down {
+  position: absolute;
+  z-index: 1100;
+  color: #111111;
+  animation: flink 1s linear infinite;
+}
+
+.move-down ion-icon {
+  font-size: 3em;
+}
+
+@keyframes flink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.lead svg {
+  font-family: "Great Vibes", cursive;
+  position: absolute;
+  z-index: 1100;
+  fill: currentColor;
+  height: auto;
+  max-width: 20vmin;
+  transform-origin: center;
+  width: 66%;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
