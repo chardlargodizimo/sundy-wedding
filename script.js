@@ -58,3 +58,15 @@ const resetHeader = () => {
   let header = document.querySelector("header");
   header.classList.remove("active");
 };
+
+//initial navigation
+const initNavigation = () => {
+  const navList = document.querySelectorAll(".nav-btn");
+  navList.forEach((el) => {
+    el.classList.remove("active");
+    if (el.getAttribute("data-target") === "about") {
+      el.classList.add("active");
+    }
+  });
+  sectionNavigator("about");
+};
