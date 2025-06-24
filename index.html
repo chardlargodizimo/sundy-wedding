@@ -28,7 +28,7 @@
         <li>
           <a href="#" class="nav-btn" data-target="gallery">gallery</a>
         </li>
-        <li><a href="#" class="nav-btn" data-target="contact">contact</a></li>
+        <li><a href="#" class="nav-btn" data-target="contact">RSVP</a></li>
       </ul>
       <div class="search">
         <input type="text" placeholder="Search" /><ion-icon
@@ -186,51 +186,43 @@
             <h1>Our Services</h1>
           </div>
           <div class="row d-flex justify-content-center align-items-center">
-            <div
-              class="col-lg-4 d-flex justify-content-center align-items-center"
-            >
+            <div class="col-lg-4 d-flex justify-content-center align-items-center">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/wedding-1.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <h4>Kim</h4>
+                  <h4>+</h4>
+                  <h4>Sundy</h4>
+                  <p>
+                    With grateful hearts, we invite you to join us mark the
+                    start of our forever.
+                  </p>
+                  <a href="#" class="section-btn">Discover more</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-center align-items-center">
               <div class="card">
                 <div class="img-box">
                   <img src="images/wedding-1.jpg" alt="" />
                 </div>
                 <div class="details">
                   <h4>Weddin Plan</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Officiis natus aliquid perspiciatis facere repellendus
-                    cupiditate sunt quas a suscipit quo saepe est doloribus
-                    tempora exercitationem nostrum explicabo incidunt voluptatem
-                    itaque accusamus cumque, iusto quisquam, rerum dolor!
-                    Accusamus autem modi quaerat.
-                  </p>
+                  <ul>
+                    <li>GIFT GUIDE<br>
+                      Your presence and prayers are deeply appreciated. Should
+                      you wish to give, a monetary gift is kindly welcomed.
+                    </br></li>
+                    <li>ATTIRE<br>Semi-formal</li>
+                    <li>COLOR THEME<br>Blue</li>
+                  </ul>
                   <a href="#" class="section-btn">Discover more</a>
                 </div>
               </div>
             </div>
-            <div
-              class="col-lg-4 d-flex justify-content-center align-items-center"
-            >
-              <div class="card">
-                <div class="img-box">
-                  <img src="images/wedding-1.jpg" alt="" />
-                </div>
-                <div class="details">
-                  <h4>Weddin Plan</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Officiis natus aliquid perspiciatis facere repellendus
-                    cupiditate sunt quas a suscipit quo saepe est doloribus
-                    tempora exercitationem nostrum explicabo incidunt voluptatem
-                    itaque accusamus cumque, iusto quisquam, rerum dolor!
-                    Accusamus autem modi quaerat.
-                  </p>
-                  <a href="#" class="section-btn">Discover more</a>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-4 d-flex justify-content-center align-items-center"
-            >
+            <div class="col-lg-4 d-flex justify-content-center align-items-center">
               <div class="card">
                 <div class="img-box">
                   <img src="images/wedding-1.jpg" alt="" />
@@ -254,7 +246,53 @@
       </section>
 
       <!-- gallery section -->
-      <section id="gallery" class="gallery"></section>
+      <section id="gallery" class="gallery">
+        <div class="container">
+          <div class="row">
+            <h1>Gallery</h1>
+          </div>
+          <ul id="gallery-filters" class="d-flex justify-content-center align-items-center">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-wedding" >Wedding</li>
+            <li data-filter=".filter-ceremony" >Ceremony</li>
+          </ul>
+          <div class="row gallery-container">
+            <div class="col-lg-4 col-md-6 gallery-item filter-wedding">
+              <div class="gallery-img">
+                <img class="img-fluid" src="./images/wedding-2.jpg" alt="">
+              </div>
+
+              <div class="gallery-info">
+                <h4>Wedding Plan 1</h4>
+                <p>wedding planning 1</p>
+                <a href="./images/wedding-.jpg" data-gallery="galleryGallery" class="gallery-lightbox preview-link" title="wedding Planning 1">
+                  <ion-icon name="add-outline"></ion-icon>
+                </a>
+                <a href="#" class="details-link" title="More details">
+                  <ion-icon name="link-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row gallery-container">
+            <div class="col-lg-4 col-md-6 gallery-item filter-wedding">
+              <div class="gallery-img">
+                <img class="img-fluid" src="./images/wedding-3.jpg" alt="">
+              </div>
+              <div class="gallery-info">
+                <h4>Wedding Plan 1</h4>
+                <p>wedding planning 1</p>
+                <a href="./images/wedding-.jpg" data-gallery="galleryGallery" class="gallery-lightbox preview-link" title="wedding Planning 1">
+                  <ion-icon name="add-outline"></ion-icon>
+                </a>
+                <a href="#" class="details-link" title="More details">
+                  <ion-icon name="link-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- contact section -->
       <section id="contact" class="contact"></section>
@@ -274,6 +312,11 @@
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+    
+    <script src="isotope.js"></script>
     <script src="script.js"></script>
+
   </body>
 </html>

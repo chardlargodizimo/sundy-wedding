@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --primary: #ff0066;
+  --primary: #078bc9;
 }
 
 * {
@@ -585,4 +585,117 @@ section p {
 .card .details h4::first-letter {
   color: var(--primary);
   font-size: 1.5em;
+}
+
+.gallery h1 {
+  margin-bottom: 50px;
+}
+
+.gallery #gallery-filters {
+  list-style: none;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery #gallery-filters li {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  margin: 10px 5px;
+  font-size: 0.8em;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #111111;
+  transition: 0.3s;
+  padding: 8px 20px;
+  text-align: center;
+}
+
+.gallery #gallery-filters li::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  height: 2px;
+  width: 50%;
+  background: var(--primary);
+  transition: 0.3s;
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: center;
+}
+
+.gallery #gallery-filters li:hover::before,
+.gallery #gallery-filters li.filter-active::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery .gallery-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.gallery .gallery-item .gallery-img {
+  overflow: hidden;
+}
+
+.gallery .gallery-item .gallery-img img {
+  transition: all 0.6s;
+}
+
+.gallery .gallery-item .gallery-info {
+  position: absolute;
+  /* opacity: 0; */
+  left: 12px;
+  right: 12px;
+  bottom: 0;
+  z-index: 3;
+  transition: all 0.3s;
+  background: var(--primary);
+  padding: 12px 15px;
+}
+
+.gallery .gallery-item .gallery-info h4 {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.gallery .gallery-item .gallery-info p {
+  color: #f9fcfe;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.gallery .gallery-item .gallery-info .preview-link,
+.gallery .gallery-item .gallery-info .details-link {
+  position: absolute;
+  right: 40px;
+  font-size: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+gallery .gallery-item .gallery-info .preview-link:hover,
+.gallery .gallery-item .gallery-info .details-link:hover {
+  color: #111111;
+}
+
+.gallery .gallery-item .gallery-info .details-link {
+  right: 10px;
+}
+
+.gallery .gallery-item:hover .gallery-img img {
+  transform: scale(1.15);
+}
+
+.gallery .gallery-item:hover .gallery-info {
+  opacity: 1;
 }
