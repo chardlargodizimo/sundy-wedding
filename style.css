@@ -19,7 +19,6 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  visibility: hidden;
 }
 
 header {
@@ -650,7 +649,7 @@ section p {
 
 .gallery .gallery-item .gallery-info {
   position: absolute;
-  /* opacity: 0; */
+  opacity: 0;
   left: 12px;
   right: 12px;
   bottom: 0;
