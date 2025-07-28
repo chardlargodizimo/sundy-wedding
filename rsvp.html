@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSVP | Kim & Sundy</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="./images/monongram.svg" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="logo">K|S</a>
+      <a href="#" class="menu" onclick="toggleMenu();">
+        <ion-icon class="open" name="menu-outline"></ion-icon>
+        <ion-icon class="close" name="close-outline"></ion-icon>
+      </a>
+      <ul class="nav">
+        <li><a href="index.html" class="nav-btn">Home</a></li>
+        <li><a href="index.html#about" class="nav-btn">About</a></li>
+        <li><a href="index.html#services" class="nav-btn">Services</a></li>
+        <li><a href="index.html#gallery" class="nav-btn">Gallery</a></li>
+        <li><a href="rsvp.html" class="nav-btn active">RSVP</a></li>
+      </ul>
+    </header>
+
+    <!-- RSVP Section -->
+    <main>
+      <section class="section-show" style="padding-top: 180px">
+        <div class="container">
+          <div class="text-center mb-4">
+            <h1>RSVP Form</h1>
+            <h4 class="text-muted">
+              We have only reserved one seat per person who is invited.
+            </h4>
+          </div>
+
+          <form
+            action="https://formsubmit.co/anastasiacaitcaga@gmail.com"
+            method="POST"
+            class="rsvp-form"
+          >
+            <!-- Hidden Config -->
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="New RSVP Submission" />
+            <input type="hidden" name="_template" value="box" />
+
+            <!-- Name -->
+            <div class="mb-3">
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+
+            <!-- Attendance -->
+            <div class="mb-3">
+              <select name="attendance" class="form-select" required>
+                <option value="" disabled selected>Will you attend?</option>
+                <option value="Yes, I will attend">Yes, I will attend</option>
+                <option value="No, I can't make it">No, I can't make it</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-4">
+              <textarea
+                name="message"
+                class="form-control"
+                rows="4"
+                placeholder="Message for the couple"
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="text-center">
+              <button type="submit" class="rsvp-button">Send RSVP</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

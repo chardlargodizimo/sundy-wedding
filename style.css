@@ -1,7 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Gabarito:wght@400..900&family=The+Nautigal:wght@400;700&display=swap");
 
 :root {
-  --primary: #078bc9;
+  --clr-primary: #205a40;
+  --font-primary: "The Nautigal", cursive;
+  --font-secondary: "Bodoni Moda SC", serif;
+  --font-nav: "Gabarito", sans-serif;
 }
 
 * {
@@ -10,15 +13,44 @@
   box-sizing: border-box;
 }
 
+/* Form fields use nav font */
+input,
+textarea,
+select,
+option {
+  font-family: var(--font-nav);
+  font-size: 1em;
+  letter-spacing: 0.5px;
+}
+
+/* Placeholders */
+input::placeholder,
+textarea::placeholder {
+  font-family: var(--font-nav);
+  letter-spacing: 0.5px;
+  color: #888888;
+  font-size: 0.95em;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  border: 2px solid var(--clr-primary) !important;
+  box-shadow: 0 0 0 3px rgba(32, 90, 64, 0.25) !important;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   position: relative;
-  background: #ffffff;
-  font-family: "Roboto", sans-serif;
+  background: #f8f5f1;
+  font-family: var(--font-secondary);
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+  color: var(--clr-primary);
 }
 
 header {
@@ -43,11 +75,11 @@ header.active {
 }
 
 .logo {
-  font-family: "Great Vibes", cursive;
+  font-family: var(--font-secondary);
   font-size: 40px;
-  color: #000000;
+  color: var(--clr-primary);
   letter-spacing: 2px;
-  font-weight: 400;
+  font-weight: 800;
   text-decoration: none;
 }
 
@@ -61,15 +93,19 @@ header.active {
 /* menu on mobile */
 .menu .open {
   display: block;
+  color: var(--clr-primary) !important;
 }
 .menu .close {
   display: none;
+  color: var(--clr-primary) !important;
 }
 .menu.active .open {
   display: none;
+  color: var(--clr-primary) !important;
 }
 .menu.active .close {
   display: block;
+  color: var(--clr-primary) !important;
 }
 
 .nav {
@@ -82,58 +118,72 @@ header.active {
 }
 
 .nav li a {
-  color: #000000;
+  position: relative;
+  color: var(--clr-primary);
+  font-family: var(--font-nav);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: 0.5s;
+  transition: color 0.3s ease;
   font-weight: 300;
   padding: 10px;
 }
 
-.nav li a:hover,
-.nav li a.active {
-  color: var(--primary);
-}
-
-.search {
-  position: relative;
-  width: 300px;
-  height: 40px;
-  transition: 0.5s;
-}
-
-.search input {
+.nav li a::after {
+  content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  bottom: 5px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--clr-primary);
+  transition: width 0.4s ease;
+}
+
+.nav li a:hover::after,
+.nav li a.active::after {
   width: 100%;
-  height: 100%;
-  color: #000000;
-  background: transparent;
+}
+
+.nav li a:hover,
+.nav li a.active {
+  color: var(--clr-primary);
+}
+
+.rsvp-form {
+  max-width: 700px;
+  margin: auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.rsvp-button {
+  background-color: var(--clr-primary);
+  color: white;
+  padding: 12px 30px;
+  font-size: 18px;
   border: none;
-  border-bottom: 1px solid #000000;
-  outline: none;
-  padding: 0 10px 0 15px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: var(--font-nav);
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.search input::placeholder {
-  color: #000000;
-  text-transform: uppercase;
-  font-weight: 350;
+.rsvp-button:hover {
+  background-color: #2b7a5e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
-.search ion-icon {
-  font-size: 1.4em;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 10px;
-  padding-left: 10px;
-  color: #000000;
-  cursor: pointer;
-  border-left: 1px solid #000000;
+.form-control,
+.form-select {
+  border-radius: 12px;
+  padding: 12px;
 }
 
 /* mobile navigation */
@@ -178,7 +228,7 @@ header.active {
   padding: 10px;
 }
 .nav-mobile li a:hover {
-  color: var(--primary);
+  color: var(--clr-primary);
 }
 
 .banner {
@@ -228,14 +278,13 @@ header.active {
 }
 
 .bg-slide .content h1 {
-  font-size: 8em;
-  text-transform: uppercase;
+  font-size: 4em;
 }
 
 .bg-slide .content p {
-  font-family: "Great Vibes", cursive;
-  font-weight: 200;
-  font-size: 1.5em;
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: 12em;
   letter-spacing: 1px;
 }
 
@@ -331,7 +380,7 @@ header.active {
 
 .slide-loader li a {
   text-decoration: none;
-  color: #111111;
+  color: var(--clr-primary);
   font-size: 2em;
   font-weight: 800;
   transition: 0.5s;
@@ -352,7 +401,7 @@ header.active {
   left: -70%;
   width: 100px;
   height: 2px;
-  background: #111111;
+  background: var(--clr-primary);
 }
 
 .share {
@@ -473,7 +522,7 @@ section.section-show {
 }
 
 section h1 {
-  font-family: "Great Vibes", cursive;
+  font-family: var(--font-secondary);
   font-weight: 400;
   font-size: 4em;
   letter-spacing: 1px;
@@ -497,19 +546,8 @@ section p {
 }
 
 .about h4::first-letter {
-  color: var(--primary);
+  color: var(--clr-primary);
   font-size: 2em;
-}
-
-.about::before {
-  position: absolute;
-  content: "";
-  left: 50%;
-  transform: translateX(-50%);
-  top: 250px;
-  height: 100px;
-  width: 2px;
-  background: #111111;
 }
 
 .about .img-box {
@@ -547,7 +585,7 @@ section p {
 }
 
 .section-btn:hover {
-  color: var(--primary);
+  color: var(--clr-primary);
 }
 
 .section-btn::before {
@@ -563,18 +601,7 @@ section p {
 
 .section-btn:hover::before {
   left: 20%;
-  background: var(--primary);
-}
-
-.services::before {
-  position: absolute;
-  content: "";
-  left: 50%;
-  transform: translateX(-50%);
-  top: 250px;
-  height: 100px;
-  width: 2px;
-  background: #111111;
+  background: var(--clr-primary);
 }
 
 .card {
@@ -643,7 +670,7 @@ section p {
 }
 
 .card .details h4::first-letter {
-  color: var(--primary);
+  color: var(--clr-primary);
   font-size: 1.5em;
 }
 
@@ -681,7 +708,7 @@ section p {
   bottom: -5px;
   height: 2px;
   width: 50%;
-  background: var(--primary);
+  background: var(--clr-primary);
   transition: 0.3s;
   visibility: hidden;
   opacity: 0;
@@ -715,7 +742,7 @@ section p {
   bottom: 0;
   z-index: 3;
   transition: all 0.3s;
-  background: var(--primary);
+  background: var(--clr-primary);
   padding: 12px 15px;
 }
 
@@ -763,7 +790,7 @@ gallery .gallery-item .gallery-info .preview-link:hover,
 .contact .info ion-icon {
   font-size: 0.6em;
   padding: 8px;
-  color: var(--primary);
+  color: var(--clr-primary);
   float: left;
   width: 45px;
   height: 45px;
