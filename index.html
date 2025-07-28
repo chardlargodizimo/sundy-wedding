@@ -25,7 +25,7 @@
       <ul class="nav">
         <li>
           <a href="#" class="nav-btn active" onclick="resetHeader();">
-            <ion-icon name="home-outline"></ion-icon>
+            home
           </a>
         </li>
         <li><a href="#" class="nav-btn" data-target="about">about</a></li>
@@ -40,10 +40,7 @@
 
     <!-- mobile navigation -->
      <ul class="nav-mobile">
-      <li>
-        <a href="/" onclick="resetHeader()" class="nav-btn active">
-          <ion-icon name="home-outline"></ion-icon>
-        </a>
+      <li><a href="/" onclick="resetHeader()" class="nav-btn active">home</a>
       </li>
       <li><a href="#" class="nav-btn" data-target="about">about</a></li>
       <li><a href="#" class="nav-btn" data-target="services">services</a></li>
@@ -56,18 +53,18 @@
     <div class="banner container-fluid">
       <div class="bg-slide slide-1 active">
         <div class="content">
-          <h1>Site is on maintenance</h1>
-          <p style="font-size: 3em;">
-            Please come back on or before August 1, 2025
+          <h1>The Marriage of</h1>
+          <p>
+            Kim and Sundy
           </p>
           <a href="./rsvp.html" class="rsvp-button">RSVP Now</a>
         </div>
         <div class="circle bg">
-          <img src="#" alt="" />
+          <img src="./images/Wedding.png" alt="" />
           <div class="circle large">
-            <img src="#" alt="" />
+            <img src="./images/Wedding.png" alt="" />
             <div class="circle small">
-              <img src="#" alt="" />
+              <img src="./images/Wedding.png" alt="" />
             </div>
           </div>
         </div>
@@ -76,42 +73,32 @@
         <div class="content">
           <h1>Ceremony</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex est
-            accusantium itaque, reprehenderit inventore porro reiciendis vitae
-            officiis autem similique qui dignissimos nemo, quibusdam eum! Nemo
-            distinctio ut repellendus odio adipisci aspernatur officia? Porro
-            mollitia eos recusandae molestias accusamus autem obcaecati magni
-            exercitationem, hic, tempore, ad minus debitis quibusdam ullam!
+           St. Benedict Parish Silang, Cavite
           </p>
         </div>
         <div class="circle bg">
-          <img src="#" alt="" />
+          <img src="./images/Church.png" alt="" />
           <div class="circle large">
-            <img src="#" alt="" />
+            <img src="./images/Church.png" alt="" />
             <div class="circle small">
-              <img src="#" alt="" />
+              <img src="./images/Church.png" alt="" />
             </div>
           </div>
         </div>
       </div>
       <div class="bg-slide slide-3">
         <div class="content">
-          <h1>RSVP</h1>
+          <h1>Reception</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex est
-            accusantium itaque, reprehenderit inventore porro reiciendis vitae
-            officiis autem similique qui dignissimos nemo, quibusdam eum! Nemo
-            distinctio ut repellendus odio adipisci aspernatur officia? Porro
-            mollitia eos recusandae molestias accusamus autem obcaecati magni
-            exercitationem, hic, tempore, ad minus debitis quibusdam ullam!
+           Seda Hotel Nuvali
           </p>
         </div>
         <div class="circle bg">
-          <img src="#" alt="" />
+          <img src="./images/Recep.png" alt="" />
           <div class="circle large">
-            <img src="#" alt="" />
+            <img src="./images/Recep.png" alt="" />
             <div class="circle small">
-              <img src="#" alt="" />
+              <img src="./images/Recep.png" alt="" />
             </div>
           </div>
         </div>
@@ -124,7 +111,14 @@
 
       <div class="share">
         <p>share</p>
-        <a href="#"><ion-icon name="share-social-outline"></ion-icon></a>
+        <a href="#" id="share-button" class="share-icon">
+          <ion-icon name="share-social-outline"></ion-icon>
+        </a>
+        <div id="share-fallback" style="display: none; margin-top: 10px;">
+    <a href="#" id="fb-share" title="Share on Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+    <a href="#" id="twitter-share" title="Share on Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+    <a href="#" id="whatsapp-share" title="Share on WhatsApp"><ion-icon name="logo-whatsapp"></ion-icon></a>
+  </div>
       </div>
     </div>
 
@@ -161,7 +155,7 @@
                 laborum sequi eveniet vitae? Laboriosam voluptatibus nam
                 voluptatem, sit modi odit.
               </p>
-              <a href="#" class="section-btn">Discover more</a>
+              <!-- <a href="#" class="section-btn">Discover more</a> -->
             </div>
           </div>
         </div>
