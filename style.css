@@ -206,7 +206,7 @@ header.active {
 .banner {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   padding: 0 100px;
   display: flex;
   justify-content: center;
