@@ -1,5 +1,6 @@
 // Initiate gallery lightbox
-
-const galleryLightBox = Glightbox({
-  selector: ".gallery-lightbox",
+document.addEventListener("DOMContentLoaded", function () {
+  const galleryLightBox = GLightbox({
+    selector: ".gallery-lightbox",
+  });
 });

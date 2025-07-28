@@ -55,6 +55,21 @@ header.active {
   color: #000000;
   font-size: 2em;
   transition: 0.5s;
+  visibility: hidden;
+}
+
+/* menu on mobile */
+.menu .open {
+  display: block;
+}
+.menu .close {
+  display: none;
+}
+.menu.active .open {
+  display: none;
+}
+.menu.active .close {
+  display: block;
 }
 
 .nav {
@@ -119,6 +134,51 @@ header.active {
   color: #000000;
   cursor: pointer;
   border-left: 1px solid #000000;
+}
+
+/* mobile navigation */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  z-index: 1200;
+  gap: 20px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.nav-mobile.active {
+  opacity: 1;
+  visibility: visible;
+}
+.nav-mobile li {
+  position: relative;
+  list-style: none;
+}
+.nav-mobile li a {
+  color: #111111;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 300;
+  padding: 10px;
+}
+.nav-mobile li a:hover {
+  color: var(--primary);
 }
 
 .banner {
@@ -698,4 +758,125 @@ gallery .gallery-item .gallery-info .preview-link:hover,
 
 .gallery .gallery-item:hover .gallery-info {
   opacity: 1;
+}
+
+.contact .info ion-icon {
+  font-size: 0.6em;
+  padding: 8px;
+  color: var(--primary);
+  float: left;
+  width: 45px;
+  height: 45px;
+  background: #f4e3ea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  margin-right: 20px;
+}
+
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 1.6em;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111111;
+}
+
+.contact .info p {
+  padding: 0 0 0 60px;
+  font-size: 0.9em;
+  font-weight: 300;
+  margin-bottom: 0;
+  color: #111111;
+}
+
+.contact .info .email,
+.contact .info .phone {
+  margin-top: 40px;
+}
+
+/* responsive design */
+@media (max-width: 768px) {
+  header {
+    padding: 30px;
+  }
+  .nav {
+    display: none;
+  }
+  .search {
+    display: none;
+  }
+  .banner {
+    padding: 120px 30px;
+  }
+  .menu {
+    visibility: visible;
+  }
+  .bg-slide .content {
+    width: 80vw;
+  }
+  .bg-slide .content h1 {
+    font-size: 3em;
+  }
+  .bg-slide .content p {
+    font-size: 0.8em;
+  }
+  .circle.bg {
+    width: 140vh;
+    height: 140vh;
+  }
+  .circle.large {
+    width: 70vh;
+    height: 70vh;
+  }
+  .circle.small {
+    width: 35vh;
+    height: 35vh;
+  }
+  .bg-slide.active .circle.bg {
+    transform: translate(0, 0) rotateZ(0deg);
+    opacity: 1;
+    visibility: visible;
+  }
+  .bg-slide.active .circle.large {
+    transform: translate(0, 0) rotateZ(360deg);
+    opacity: 1;
+    visibility: visible;
+  }
+  .bg-slide.active .circle.small {
+    transform: translate(0, 0) rotateZ(-720deg);
+    opacity: 1;
+    visibility: visible;
+  }
+  .lead {
+    bottom: 100px;
+    width: 150px;
+    height: 150px;
+  }
+  .slide-loader {
+    right: 40px;
+    bottom: 20px;
+  }
+  .share {
+    left: 5px;
+  }
+  section.section-show {
+    padding: 150px 30px 100px;
+  }
+  .about .img-box .img {
+    max-width: 80vw;
+  }
+  .about .img-box .corner-img {
+    width: 25vw;
+    right: -20px;
+  }
+  .about h4 {
+    margin-top: 50px;
+  }
+  .section-bg-img {
+    bottom: -500px;
+    right: 0px;
+  }
 }
