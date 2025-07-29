@@ -51,6 +51,7 @@ body {
   min-height: 100vh;
   overflow: hidden;
   color: var(--clr-primary);
+  visibility: hidden;
 }
 
 header {
@@ -256,7 +257,7 @@ header.active {
 .bg-slide .content p {
   font-family: var(--font-primary);
   font-weight: 900;
-  font-size: 12em;
+  font-size: 4em;
   letter-spacing: 1px;
 }
 
@@ -820,6 +821,7 @@ gallery .gallery-item .gallery-info .preview-link:hover,
   display: inline-block;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
 }
 
 .rsvp-button:hover {
