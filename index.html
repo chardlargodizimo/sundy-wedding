@@ -3,388 +3,697 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Kim & Sundy's Wedding" />
+    <meta
+      property="og:description"
+      content="Let’s celebrate with us. Join us on our special day!"
+    />
+    <meta
+      property="og:image"
+      content="https://kxswedding.netlify.app/images/monongram.svg"
+    />
+    <meta property="og:url" content="https://kxswedding.netlify.app" />
+    <meta property="og:type" content="website" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="icon" href="./images/monongram.svg" type="image/png" />
+
+    <link rel="stylesheet" href="style.css" />
     <title>Kim and Sundy Wedding</title>
   </head>
   <body>
-    <!-- header -->
-    <header>
-      <a href="/" class="logo">K|S</a>
-      <a href="#" class="menu" onclick="toggleMenu();">
-        <ion-icon class="open" name="menu-outline"></ion-icon>
-        <ion-icon class="close" name="close-outline"></ion-icon>
-      </a>
-      <ul class="nav">
-        <li>
-          <a href="#" class="nav-btn active" onclick="resetHeader();">
-            home
-          </a>
-        </li>
-        <li><a href="#" class="nav-btn" data-target="about">about</a></li>
-        <li><a href="#" class="nav-btn" data-target="services">services</a></li>
-        <li>
-          <a href="#" class="nav-btn" data-target="gallery">gallery</a>
-        </li>
-        <li><a href="#" class="nav-btn" data-target="contact">RSVP</a></li>
-      </ul>
-     
+    <!-- Header -->
+    <header class="header">
+      <div class="header__container">
+        <a href="/" class="header__logo" data-target="home">
+          K<span class="header__divider">|</span>S
+        </a>
+        <button
+          class="header__menu-toggle"
+          aria-label="Toggle navigation"
+          onclick="toggleMenu();"
+        >
+          <ion-icon
+            class="header__icon header__icon--open"
+            name="menu-outline"
+          ></ion-icon>
+          <ion-icon
+            class="header__icon header__icon--close"
+            name="close-outline"
+          ></ion-icon>
+        </button>
+        <nav class="header__nav" role="navigation">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a
+                href="#"
+                class="header__nav-link header__nav-link--active"
+                data-target="home"
+                >Home</a
+              >
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link" data-target="about">About</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link" data-target="entourage"
+                >Entourage</a
+              >
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link" data-target="gallery"
+                >Gallery</a
+              >
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link" data-target="rsvp">RSVP</a>
+            </li>
+          </ul>
+        </nav>
+        <nav
+          class="header__nav--mobile"
+          role="navigation"
+          aria-label="Mobile Navigation"
+        >
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a
+                href="#"
+                class="header__nav-link header__nav-link--active"
+                data-target="home"
+                >Home</a
+              >
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link" data-target="about">About</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link" data-target="entourage"
+                >Entourage</a
+              >
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link" data-target="gallery"
+                >Gallery</a
+              >
+            </li>
+            <li class="header__nav-item">
+              <<a href="#" class="header__nav-link" data-target="rsvp">RSVP</a>
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <!-- mobile navigation -->
-     <ul class="nav-mobile">
-      <li><a href="/" onclick="resetHeader()" class="nav-btn active">home</a>
-      </li>
-      <li><a href="#" class="nav-btn" data-target="about">about</a></li>
-      <li><a href="#" class="nav-btn" data-target="services">services</a></li>
-      <li><a href="#" class="nav-btn" data-target="gallery">gallery</a></li>
-      <li><a href="#" class="nav-btn" data-target="contact">rsvp</a></li>
-
-     </ul>
-
-    <!-- banner -->
-    <div class="banner container-fluid">
-      <div class="bg-slide slide-1 active">
-        <div class="content">
-          <h1>Maintenance</h1>
-          <p>
-            Please come back on or before August 1, 2025.
-          </p>
-          <a href="./rsvp.html" class="rsvp-button">RSVP Now</a>
-        </div>
-        <div class="circle bg">
-          <img src="./images/Wedding.png" alt="" />
-          <div class="circle large">
-            <img src="./images/Wedding.png" alt="" />
-            <div class="circle small">
-              <img src="./images/Wedding.png" alt="" />
+    <section class="banner section-show">
+      <div class="swiper banner-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div
+              class="parallax-bg"
+              data-swiper-parallax="-20%"
+              style="background-image: url('./images/Wedding.png')"
+            ></div>
+            <div class="slide-content">
+              <h1 class="banner__title" data-swiper-parallax="-300">
+                The Marriage of
+              </h1>
+              <p class="banner__subtitle" data-swiper-parallax="-200">
+                KIM and SUNDY
+              </p>
+              <button class="banner__rsvp-btn" data-target="rsvp">
+                RSVP Now
+              </button>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="parallax-bg"
+              data-swiper-parallax="-20%"
+              style="background-image: url('./images/Church.png')"
+            ></div>
+            <div class="slide-content">
+              <h2 data-swiper-parallax="-300">Kim & Sundy</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="parallax-bg"
+              data-swiper-parallax="-20%"
+              style="background-image: url('./images/Recep.png')"
+            ></div>
+            <div class="slide-content">
+              <h2 data-swiper-parallax="-300">Save the Date</h2>
             </div>
           </div>
         </div>
-      </div>
-      <div class="bg-slide slide-2">
-        <div class="content">
-          <h1>Ceremony</h1>
-          <p>
-           St. Benedict Parish Silang, Cavite
-          </p>
-        </div>
-        <div class="circle bg">
-          <img src="./images/Church.png" alt="" />
-          <div class="circle large">
-            <img src="./images/Church.png" alt="" />
-            <div class="circle small">
-              <img src="./images/Church.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bg-slide slide-3">
-        <div class="content">
-          <h1>Reception</h1>
-          <p>
-           Seda Hotel Nuvali
-          </p>
-        </div>
-        <div class="circle bg">
-          <img src="./images/Recep.png" alt="" />
-          <div class="circle large">
-            <img src="./images/Recep.png" alt="" />
-            <div class="circle small">
-              <img src="./images/Recep.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <ul class="slide-loader">
-        <li><a class="slide-btn active" data-target="slide-1">1</a></li>
-        <li><a class="slide-btn" data-target="slide-2">2</a></li>
-        <li><a class="slide-btn" data-target="slide-3">3</a></li>
-      </ul>
 
-      <div class="share">
-        <p>share</p>
-        <a href="#" id="share-button" class="share-icon">
-          <ion-icon name="share-social-outline"></ion-icon>
-        </a>
-        <div id="share-fallback" style="display: none; margin-top: 10px;">
-    <a href="#" id="fb-share" title="Share on Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
-    <a href="#" id="twitter-share" title="Share on Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
-    <a href="#" id="whatsapp-share" title="Share on WhatsApp"><ion-icon name="logo-whatsapp"></ion-icon></a>
-  </div>
+        <!-- Custom Pagination Class -->
+        <div class="swiper-pagination custom-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
-    </div>
+
+      <!-- Share Trigger -->
+      <div class="banner__share-trigger" id="banner-share-trigger">Share</div>
+
+      <!-- Share modal -->
+      <div id="share-modal" class="share-modal">
+        <div class="share-modal__content">
+          <span id="share-modal-close" class="share-modal__close">&times;</span>
+          <h3 class="share-modal__title">Share this wedding</h3>
+          <div class="share-modal__icons">
+            <a id="share-fb" href="#" target="_blank" rel="noopener"
+              >Facebook</a
+            >
+            <a id="share-twitter" href="#" target="_blank" rel="noopener"
+              >Twitter</a
+            >
+            <a
+              id="share-ig"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener"
+              >Instagram</a
+            >
+            <a id="share-viber" href="#" target="_blank" rel="noopener"
+              >Viber</a
+            >
+            <a id="share-whatsapp" href="#" target="_blank" rel="noopener"
+              >WhatsApp</a
+            >
+            <a id="share-telegram" href="#" target="_blank" rel="noopener"
+              >Telegram</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- main page -->
     <main>
-      <!-- about section -->
-      <section id="about" class="about">
-        <div class="container">
-          <div class="row">
-            <h1>about us</h1>
-          </div>
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="img-box">
-                <img src="about-1.jpg" alt="" class="img-fluid" />
-                <img src="about-2.jpg" alt="" class="corner-img" />
-              </div>
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="about__container container">
+          <h2 class="about__title">About Us</h2>
+
+          <div class="about__content row">
+            <div class="about__image-wrapper col-lg-6">
+              <figure class="about__image-box">
+                <img
+                  src="images/Church.png"
+                  alt="Church"
+                  class="about__image"
+                />
+                <img
+                  src="images/Recep.png"
+                  alt="Reception venue"
+                  class="about__image about__image--corner"
+                />
+              </figure>
             </div>
-            <div class="col-lg-6">
-              <img src="" alt="" class="section-bg-img" />
-              <h4>
+
+            <div class="about__text-wrapper col-lg-6">
+              <div class="about__background"></div>
+
+              <h3 class="about__subtitle">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Deleniti, dignissimos?
-              </h4>
-              <p>
+              </h3>
+
+              <p class="about__paragraph">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
                 commodi cum vel nam debitis nemo, laboriosam sunt eius sapiente
                 laborum sequi eveniet vitae? Laboriosam voluptatibus nam
                 voluptatem, sit modi odit.
               </p>
-              <p>
+
+              <p class="about__paragraph">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
                 commodi cum vel nam debitis nemo, laboriosam sunt eius sapiente
                 laborum sequi eveniet vitae? Laboriosam voluptatibus nam
                 voluptatem, sit modi odit.
               </p>
-              <!-- <a href="#" class="section-btn">Discover more</a> -->
+
+              <!-- <a href="#" class="about__button">Discover more</a> -->
             </div>
           </div>
         </div>
       </section>
+      <!-- entourage section -->
+      <section id="entourage" class="entourage section">
+        <div class="container entourage__container">
+          <h2 class="entourage__title">Wedding Entourage</h2>
 
-      <!-- services section -->
-      <section id="services" class="services">
-        <div class="container">
-          <div class="row">
-            <h1>Our Services</h1>
-          </div>
-          <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-lg-4 d-flex justify-content-center align-items-center">
-              <div class="card">
-                <div class="img-box">
-                  <img src="images/wedding-1.jpg" alt="" />
-                </div>
-                <div class="details">
-                  <h4>Kim</h4>
-                  <h4>+</h4>
-                  <h4>Sundy</h4>
-                  <p>
-                    With grateful hearts, we invite you to join us mark the
-                    start of our forever.
-                  </p>
-                  <a href="#" class="section-btn">Discover more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 d-flex justify-content-center align-items-center">
-              <div class="card">
-                <div class="img-box">
-                  <img src="images/wedding-1.jpg" alt="" />
-                </div>
-                <div class="details">
-                  <h4>Weddin Plan</h4>
-                  <ul>
-                    <li>GIFT GUIDE<br>
-                      Your presence and prayers are deeply appreciated. Should
-                      you wish to give, a monetary gift is kindly welcomed.
-                    </br></li>
-                    <li>ATTIRE<br>Semi-formal</li>
-                    <li>COLOR THEME<br>Blue</li>
+          <div class="entourage__accordion accordion" id="entourageAccordion">
+            <!-- Principal Sponsors -->
+            <article class="entourage__group accordion-item">
+              <h3 class="accordion-header" id="headingPrincipal">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsePrincipal"
+                  aria-expanded="true"
+                  aria-controls="collapsePrincipal"
+                >
+                  Principal Sponsors
+                </button>
+              </h3>
+              <div
+                id="collapsePrincipal"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingPrincipal"
+                data-bs-parent="#entourageAccordion"
+              >
+                <div class="accordion-body entourage__list-wrapper">
+                  <ul class="entourage__list">
+                    <li class="entourage__item">Heidi Aspa</li>
+                    <li class="entourage__item">Engr. Art Aspa</li>
+                    <li class="entourage__item">Cristina Caga</li>
+                    <li class="entourage__item">Judge Charity Grace Rico</li>
+                    <li class="entourage__item">Melvin Bojos</li>
+                    <li class="entourage__item">Dr. Marleen Nable</li>
                   </ul>
-                  <a href="#" class="section-btn">Discover more</a>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4 d-flex justify-content-center align-items-center">
-              <div class="card">
-                <div class="img-box">
-                  <img src="images/wedding-1.jpg" alt="" />
-                </div>
-                <div class="details">
-                  <h4>Weddin Plan</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Officiis natus aliquid perspiciatis facere repellendus
-                    cupiditate sunt quas a suscipit quo saepe est doloribus
-                    tempora exercitationem nostrum explicabo incidunt voluptatem
-                    itaque accusamus cumque, iusto quisquam, rerum dolor!
-                    Accusamus autem modi quaerat.
-                  </p>
-                  <a href="#" class="section-btn">Discover more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </article>
 
-      <!-- gallery section -->
-      <section id="gallery" class="gallery">
-        <div class="container">
-          <div class="row">
-            <h1>Gallery</h1>
-          </div>
-          <ul id="gallery-filters" class="d-flex justify-content-center align-items-center">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-wedding" >Wedding</li>
-            <li data-filter=".filter-ceremony" >Ceremony</li>
-          </ul>
-          <div class="row gallery-container">
-            <div class="col-lg-4 col-md-6 gallery-item filter-wedding">
-              <div class="gallery-img">
-                <img class="img-fluid" src="./images/test1.jpg" alt="">
-              </div>
-
-              <div class="gallery-info">
-                <h4>Wedding Plan 1</h4>
-                <p>wedding planning 1</p>
-                <a href="./images/test1.jpg" data-gallery="galleryGallery" class="gallery-lightbox preview-link" title="wedding Planning 1">
-                  <ion-icon name="add-outline"></ion-icon>
-                </a>
-                <a href="#" class="details-link" title="More details">
-                  <ion-icon name="link-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 gallery-item filter-ceremony">
-              <div class="gallery-img">
-                <img class="img-fluid" src="./images/test.jpg" alt="">
-              </div>
-
-              <div class="gallery-info">
-                <h4>Wedding Plan 1</h4>
-                <p>wedding planning 1</p>
-                <a href="./images/test.jpg" data-gallery="galleryGallery" class="gallery-lightbox preview-link" title="wedding Planning 1">
-                  <ion-icon name="add-outline"></ion-icon>
-                </a>
-                <a href="#" class="details-link" title="More details">
-                  <ion-icon name="link-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 gallery-item filter-wedding">
-              <div class="gallery-img">
-                <img class="img-fluid" src="./images/wedding-1.jpg" alt="">
-              </div>
-
-              <div class="gallery-info">
-                <h4>Wedding Plan 1</h4>
-                <p>wedding planning 1</p>
-                <a href="./images/wedding-1.jpg" data-gallery="galleryGallery" class="gallery-lightbox preview-link" title="wedding Planning 1">
-                  <ion-icon name="add-outline"></ion-icon>
-                </a>
-                <a href="#" class="details-link" title="More details">
-                  <ion-icon name="link-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 gallery-item filter-ceremony">
-              <div class="gallery-img">
-                <img class="img-fluid" src="./images/test1.jpg" alt="">
-              </div>
-
-              <div class="gallery-info">
-                <h4>Wedding Plan 1</h4>
-                <p>wedding planning 1</p>
-                <a href="./images/test1.jpg" data-gallery="galleryGallery" class="gallery-lightbox preview-link" title="wedding Planning 1">
-                  <ion-icon name="add-outline"></ion-icon>
-                </a>
-                <a href="#" class="details-link" title="More details">
-                  <ion-icon name="link-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 gallery-item filter-ceremony">
-              <div class="gallery-img">
-                <img class="img-fluid" src="./images/wedding-3.jpg" alt="">
-              </div>
-
-              <div class="gallery-info">
-                <h4>Wedding Plan 1</h4>
-                <p>wedding planning 1</p>
-                <a href="./images/wedding-3.jpg" data-gallery="galleryGallery" class="gallery-lightbox preview-link" title="wedding Planning 1">
-                  <ion-icon name="add-outline"></ion-icon>
-                </a>
-                <a href="#" class="details-link" title="More details">
-                  <ion-icon name="link-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 gallery-item filter-wedding">
-              <div class="gallery-img">
-                <img class="img-fluid" src="./images/wedding-1.jpg" alt="">
-              </div>
-
-              <div class="gallery-info">
-                <h4>Wedding Plan 1</h4>
-                <p>wedding planning 1</p>
-                <a href="./images/wedding-1.jpg" data-gallery="galleryGallery" class="gallery-lightbox preview-link" title="wedding Planning 1">
-                  <ion-icon name="add-outline"></ion-icon>
-                </a>
-                <a href="#" class="details-link" title="More details">
-                  <ion-icon name="link-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- contact section -->
-      <section id="contact" class="contact">
-        <div class="container">
-          <div class="row">
-            <h1>Contact Us</h1>
-          </div>
-          <div>
-            <iframe style="border: 0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.2334105765626!2d121.03827967591509!3d14.239601885811345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7d0594b97557%3A0x98b1023bf609b15b!2sSt.%20Benedict%20Parish!5e0!3m2!1sen!2sph!4v1753407286872!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <div class="row mt-5">
-            <div class="col-lg-4">
-              <div class="info">
-                <div class="address">
-                  <ion-icon name="location-outline"></ion-icon>
-                  <h4>Location:</h4>
-                  <p>Saint Benedict Parish, Silang, Cavite</p>
-                </div>
-                 <div class="email">
-                  <ion-icon name="mail-outline"></ion-icon>
-                  <h4>Location:</h4>
-                  <p>Saint Benedict Parish, Silang, Cavite</p>
-                </div>
-                 <div class="phone">
-                  <ion-icon name="call-outline"></ion-icon>
-                  <h4>Location:</h4>
-                  <p>Saint Benedict Parish, Silang, Cavite</p>
+            <!-- Best Man & Maid of Honor -->
+            <article class="entourage__group accordion-item">
+              <h3 class="accordion-header" id="headingBestMaid">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseBestMaid"
+                  aria-expanded="false"
+                  aria-controls="collapseBestMaid"
+                >
+                  Best Man & Maid of Honor
+                </button>
+              </h3>
+              <div
+                id="collapseBestMaid"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingBestMaid"
+                data-bs-parent="#entourageAccordion"
+              >
+                <div class="accordion-body entourage__list-wrapper">
+                  <ul class="entourage__list">
+                    <li class="entourage__item">Engr. Mark Anthony S. Caga</li>
+                    <li class="entourage__item">Engr. Menchie R. Nankil</li>
+                  </ul>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-8 mt-5 mt-lg-0">
-              <form action="">
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input type="text" class="form-control" placeholder="Your Name" required>
+            </article>
+
+            <!-- Bridesmaids & Groomsmen -->
+            <article class="entourage__group accordion-item">
+              <h3 class="accordion-header" id="headingBridalParty">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseBridalParty"
+                  aria-expanded="false"
+                  aria-controls="collapseBridalParty"
+                >
+                  Bridesmaids & Groomsmen
+                </button>
+              </h3>
+              <div
+                id="collapseBridalParty"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingBridalParty"
+                data-bs-parent="#entourageAccordion"
+              >
+                <div class="accordion-body entourage__list-wrapper">
+                  <div class="entourage__subgroup">
+                    <strong class="entourage__label">Bridesmaids:</strong>
+                    <ul class="entourage__list">
+                      <li class="entourage__item">Camille Ann S. Caga, RPh</li>
+                      <li class="entourage__item">Rona Fabillar</li>
+                      <li class="entourage__item">Ma. Celina Baltazar</li>
+                    </ul>
+                  </div>
+                  <div class="entourage__subgroup">
+                    <strong class="entourage__label">Groomsmen:</strong>
+                    <ul class="entourage__list">
+                      <li class="entourage__item">Bruno Pereira</li>
+                      <li class="entourage__item">Miguel Remo</li>
+                      <li class="entourage__item">Engr. John Patrick Vea</li>
+                    </ul>
                   </div>
                 </div>
-              </form>
-            </div>
+              </div>
+            </article>
+
+            <!-- Ceremony Roles -->
+            <article class="entourage__group accordion-item">
+              <h3 class="accordion-header" id="headingCeremonyRoles">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseCeremonyRoles"
+                  aria-expanded="false"
+                  aria-controls="collapseCeremonyRoles"
+                >
+                  Ceremony Roles (Bearers, Veil, Cord, Candle)
+                </button>
+              </h3>
+              <div
+                id="collapseCeremonyRoles"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingCeremonyRoles"
+                data-bs-parent="#entourageAccordion"
+              >
+                <div class="accordion-body entourage__list-wrapper">
+                  <ul class="entourage__list">
+                    <li class="entourage__item">
+                      <strong>Ring Bearer:</strong> Gavin Scott Ganaden
+                    </li>
+                    <li class="entourage__item">
+                      <strong>Bible Bearer:</strong> Haven Gil Anthony Requeza
+                    </li>
+                    <li class="entourage__item">
+                      <strong>Coin Bearer:</strong> Jaden Charlemagne Vea
+                    </li>
+                    <li class="entourage__item">
+                      <strong>Veil:</strong> Ahlia Zain Margarethe Nankil,
+                      Cherry Joy Bucio
+                    </li>
+                    <li class="entourage__item">
+                      <strong>Cord:</strong> Russel Ganaden
+                    </li>
+                    <li class="entourage__item">
+                      <strong>Candle:</strong> Piero Sebastian Caga, Hannah
+                      Grace Cristine Nankil
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- Flower Girls -->
+            <article class="entourage__group accordion-item">
+              <h3 class="accordion-header" id="headingFlowerGirls">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFlowerGirls"
+                  aria-expanded="false"
+                  aria-controls="collapseFlowerGirls"
+                >
+                  Flower Girls
+                </button>
+              </h3>
+              <div
+                id="collapseFlowerGirls"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFlowerGirls"
+                data-bs-parent="#entourageAccordion"
+              >
+                <div class="accordion-body entourage__list-wrapper">
+                  <ul class="entourage__list">
+                    <li class="entourage__item">Eira Ysabel F. Santiago</li>
+                    <li class="entourage__item">
+                      Avery Caitlyn Antoniette Requeza
+                    </li>
+                    <li class="entourage__item">
+                      Ysabelle Marie Antonette Villanueva
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
+      <!-- gallery section -->
+      <section id="gallery" class="gallery section">
+        <div class="gallery__container container">
+          <h2 class="gallery__title">Gallery</h2>
+
+          <!-- Optional filter buttons -->
+          <div class="gallery__filters">
+            <button class="gallery__filter-button" data-filter="*">
+              Show All
+            </button>
+            <button class="gallery__filter-button" data-filter=".portrait">
+              Portrait
+            </button>
+            <button class="gallery__filter-button" data-filter=".landscape">
+              Landscape
+            </button>
+          </div>
+
+          <!-- Isotope grid -->
+          <div class="gallery__grid">
+            <div class="gallery__item portrait">
+              <div class="gallery__item-inner">
+                <a
+                  href="images/wedding-1.jpg"
+                  class="glightbox"
+                  data-gallery="wedding-gallery"
+                  data-title="Bride Portrait"
+                  data-description="Shot at golden hour near the altar."
+                >
+                  <img
+                    src="images/wedding-1.jpg"
+                    alt="Bride Portrait"
+                    class="gallery__image"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div class="gallery__item landscape">
+              <div class="gallery__item-inner">
+                <a
+                  href="images/Wedding.png"
+                  class="glightbox"
+                  data-gallery="wedding-gallery"
+                  data-title="Wedding"
+                  data-description="Damn damn damn"
+                >
+                  <img
+                    src="images/Wedding.png"
+                    alt="Bride Portrait"
+                    class="gallery__image"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div class="gallery__item portrait">
+              <div class="gallery__item-inner">
+                <a
+                  href="images/wedding-1.jpg"
+                  class="glightbox"
+                  data-gallery="wedding-gallery"
+                  data-title="Bride Portrait"
+                  data-description="Shot at golden hour near the altar."
+                >
+                  <img
+                    src="images/wedding-1.jpg"
+                    alt="Bride Portrait"
+                    class="gallery__image"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div class="gallery__item landscape">
+              <div class="gallery__item-inner">
+                <a
+                  href="images/Wedding.png"
+                  class="glightbox"
+                  data-gallery="wedding-gallery"
+                  data-title="Wedding"
+                  data-description="Damn damn damn"
+                >
+                  <img
+                    src="images/Wedding.png"
+                    alt="Bride Portrait"
+                    class="gallery__image"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div class="gallery__item portrait">
+              <div class="gallery__item-inner">
+                <a
+                  href="images/wedding-1.jpg"
+                  class="glightbox"
+                  data-gallery="wedding-gallery"
+                  data-title="Bride Portrait"
+                  data-description="Shot at golden hour near the altar."
+                >
+                  <img
+                    src="images/wedding-1.jpg"
+                    alt="Bride Portrait"
+                    class="gallery__image"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div class="gallery__item landscape">
+              <div class="gallery__item-inner">
+                <a
+                  href="images/Wedding.png"
+                  class="glightbox"
+                  data-gallery="wedding-gallery"
+                  data-title="Wedding"
+                  data-description="Damn damn damn"
+                >
+                  <img
+                    src="images/Wedding.png"
+                    alt="Bride Portrait"
+                    class="gallery__image"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div class="gallery__item portrait">
+              <div class="gallery__item-inner">
+                <a
+                  href="images/wedding-1.jpg"
+                  class="glightbox"
+                  data-gallery="wedding-gallery"
+                  data-title="Bride Portrait"
+                  data-description="Shot at golden hour near the altar."
+                >
+                  <img
+                    src="images/wedding-1.jpg"
+                    alt="Bride Portrait"
+                    class="gallery__image"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div class="gallery__item landscape">
+              <div class="gallery__item-inner">
+                <a
+                  href="images/Wedding.png"
+                  class="glightbox"
+                  data-gallery="wedding-gallery"
+                  data-title="Wedding"
+                  data-description="Damn damn damn"
+                >
+                  <img
+                    src="images/Wedding.png"
+                    alt="Bride Portrait"
+                    class="gallery__image"
+                  />
+                </a>
+              </div>
+            </div>
+            <!-- Add more using the same structure -->
+          </div>
+        </div>
+      </section>
+      <!-- contact section -->
+      <section id="rsvp" class="rsvp section">
+        <div class="rsvp__container container">
+          <h2 class="rsvp__title text-center">RSVP</h2>
+          <h4 class="rsvp__subtitle text-muted">
+            We have only reserved one seat per person who is invited.
+          </h4>
+
+          <form
+            id="rsvp-form"
+            action="https://formsubmit.co/anastasiacaitcaga@gmail.com"
+            method="POST"
+            class="rsvp-form"
+          >
+            <!-- Hidden Config -->
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="New RSVP Submission" />
+            <input type="hidden" name="_template" value="box" />
+
+            <div class="rsvp__group">
+              <label for="name" class="rsvp__label visually-hidden"
+                >Your Name</label
+              >
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="rsvp__input form-control"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+
+            <div class="rsvp__group">
+              <label for="attendance" class="rsvp__label visually-hidden"
+                >Will you attend?</label
+              >
+              <select
+                name="attendance"
+                id="attendance"
+                class="rsvp__select form-select"
+                required
+              >
+                <option value="" disabled selected>Will you attend?</option>
+                <option value="Yes, I will attend">Yes, I will attend</option>
+                <option value="No, I can't make it">No, I can't make it</option>
+              </select>
+            </div>
+
+            <div class="rsvp__group">
+              <label for="message" class="rsvp__label visually-hidden"
+                >Message</label
+              >
+              <textarea
+                name="message"
+                id="message"
+                class="rsvp__textarea form-control"
+                rows="4"
+                placeholder="Message for the couple"
+              ></textarea>
+            </div>
+
+            <div class="rsvp__actions text-center">
+              <button type="submit" class="rsvp__button rsvp-button">
+                Send RSVP
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- RSVP Success Modal -->
+      <div id="rsvp-modal" class="rsvp-modal">
+        <div class="rsvp-modal__content">
+          <h2 class="rsvp-modal__title">🎉 Thank you for your RSVP!</h2>
+          <p class="rsvp-modal__text">
+            We’re excited to see you at the celebration.
+          </p>
+          <button class="rsvp-modal__close" id="rsvp-modal-close">Close</button>
+        </div>
+      </div>
     </main>
 
     <!-- javascript vendors -->
@@ -401,13 +710,13 @@
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-    
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- custom js -->
     <script src="isotope.js"></script>
     <script src="glightbox.js"></script>
     <script src="script.js"></script>
-
   </body>
 </html>
