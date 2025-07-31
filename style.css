@@ -11,7 +11,7 @@
   --fs-xl: clamp(2.5rem, 12.054vw + -1.357rem, 16rem);
   --fs-lg: clamp(1.8rem, 5.536vw + 0.029rem, 8rem);
   --fs-md: clamp(1.5rem, 4.42vw + -0.157rem, 5.5rem);
-  --fs-sm: clamp(1.25rem, 1.381vw + 0.732rem, 2.5rem);
+  --fs-sm: clamp(1.25rem, 0.276vw + 1.146rem, 1.5rem);
   --fs-xs: clamp(1rem, 0.552vw + 0.793rem, 1.5rem);
 }
 
@@ -351,7 +351,7 @@ a {
 }
 
 .banner__content {
-  padding-top: 8rem;
+  padding-top: 10rem;
   text-align: center;
   color: var(--clr-primary);
   height: 100dvh;
@@ -512,13 +512,14 @@ a {
 
 .save-date__heading {
   font-family: var(--font-primary);
-  font-size: var(--fs-md);
+  font-size: var(--fs-lg);
   margin-bottom: 1rem;
+  letter-spacing: 2px;
 }
 
 .save-date__text {
   font-family: var(--font-secondary);
-  font-size: var(--fs-lg);
+  font-size: var(--fs-md);
 }
 
 /* Attire Section */
@@ -763,7 +764,10 @@ input[type="radio"] {
 /* button styling */
 
 .btn {
-  display: inline-block;
+  display: block;
+  max-width: 16rem;
+  width: 100%;
+  margin: 0 auto;
   padding: 0.5rem 1rem;
   font-size: var(--fs-sm);
   font-family: var(--font-nav);
@@ -946,6 +950,9 @@ input[type="radio"] {
 }
 
 @media screen and (min-width: 979px) {
+  .banner h1{
+    margin: 0;
+  }}
   .slide-content {
     top: 18%;
     margin: 0;
