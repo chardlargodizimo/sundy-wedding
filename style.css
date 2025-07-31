@@ -704,7 +704,7 @@ a {
 
 .form-group label {
   font-family: var(--font-nav);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   color: var(--clr-primary);
 }
 
@@ -722,7 +722,7 @@ textarea {
 
 .form-options label {
   display: block;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
