@@ -14,689 +14,469 @@
     />
     <meta property="og:url" content="https://kxswedding.netlify.app" />
     <meta property="og:type" content="website" />
+    <link rel="icon" href="./images/monogram.svg" type="image/png" />
 
+    <!-- Fonts & Vendors -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=The+Nautigal:wght@400;700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="icon" href="./images/monongram.svg" type="image/png" />
 
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css" />
     <title>Kim and Sundy Wedding</title>
   </head>
+
   <body>
     <!-- Header -->
     <header class="header">
       <div class="header__container">
-        <a href="/" class="header__logo" data-target="home">
-          K<span class="header__divider">|</span>S
-        </a>
+        <div class="logo-music">
+          <a href="#home" class="header__logo">
+            K<span class="header__divider">|</span>S
+          </a>
+          <!-- Music Player (moved here) -->
+          <div class="music-player">
+            <div class="visualizer" id="visualizer">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <button
+              id="toggleAudio"
+              class="music-btn"
+              aria-label="Toggle music"
+            >
+              <ion-icon name="play-circle-outline"></ion-icon>
+              <ion-icon name="pause-circle-outline"></ion-icon>
+            </button>
+            <audio id="weddingSong" src="./audio/song.mp3" loop></audio>
+          </div>
+        </div>
+
+        <!-- Toggle Button -->
         <button
           class="header__menu-toggle"
-          aria-label="Toggle navigation"
-          onclick="toggleMenu();"
+          id="menu-toggle"
+          aria-label="Toggle menu"
+          onclick="toggleMenu()"
         >
           <ion-icon
-            class="header__icon header__icon--open"
             name="menu-outline"
+            class="header__icon header__icon--open"
           ></ion-icon>
           <ion-icon
-            class="header__icon header__icon--close"
             name="close-outline"
+            class="header__icon header__icon--close"
           ></ion-icon>
         </button>
-        <nav class="header__nav" role="navigation">
+
+        <!-- Navigation -->
+        <nav class="header__nav" id="main-nav" role="navigation">
           <ul class="header__nav-list">
-            <li class="header__nav-item">
-              <a
-                href="#"
-                class="header__nav-link header__nav-link--active"
-                data-target="home"
-                >Home</a
+            <li><a href="#home" class="header__nav-link">Home</a></li>
+            <li>
+              <a href="#save-the-date" class="header__nav-link"
+                >Save the Date</a
               >
             </li>
-            <li class="header__nav-item">
-              <a href="#" class="header__nav-link" data-target="about">About</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="#" class="header__nav-link" data-target="entourage"
-                >Entourage</a
-              >
-            </li>
-            <li class="header__nav-item">
-              <a href="#" class="header__nav-link" data-target="gallery"
-                >Gallery</a
-              >
-            </li>
-            <li class="header__nav-item">
-              <a href="#" class="header__nav-link" data-target="rsvp">RSVP</a>
-            </li>
+
+            <!-- <li><a href="#about" class="header__nav-link">About</a></li> -->
+            <li><a href="#attire" class="header__nav-link">Attire</a></li>
+            <li><a href="#gift" class="header__nav-link">Gift Guide</a></li>
+            <li><a href="#entourage" class="header__nav-link">Entourage</a></li>
+            <!-- <li><a href="#gallery" class="header__nav-link">Gallery</a></li> -->
+            <li><a href="#rsvp" class="header__nav-link">RSVP</a></li>
           </ul>
         </nav>
+
+        <!-- Mobile Navigation Panel -->
         <nav
           class="header__nav--mobile"
-          role="navigation"
+          id="mobile-nav"
           aria-label="Mobile Navigation"
         >
           <ul class="header__nav-list">
-            <li class="header__nav-item">
-              <a
-                href="#"
-                class="header__nav-link header__nav-link--active"
-                data-target="home"
-                >Home</a
+            <li><a href="#home" class="header__nav-link">Home</a></li>
+            <li>
+              <a href="#save-the-date" class="header__nav-link"
+                >Save the Date</a
               >
             </li>
-            <li class="header__nav-item">
-              <a href="#" class="header__nav-link" data-target="about">About</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="#" class="header__nav-link" data-target="entourage"
-                >Entourage</a
-              >
-            </li>
-            <li class="header__nav-item">
-              <a href="#" class="header__nav-link" data-target="gallery"
-                >Gallery</a
-              >
-            </li>
-            <li class="header__nav-item">
-              <<a href="#" class="header__nav-link" data-target="rsvp">RSVP</a>
-              >
-            </li>
+            <!-- <li><a href="#about" class="header__nav-link">About</a></li> -->
+            <li><a href="#attire" class="header__nav-link">Attire</a></li>
+            <li><a href="#gift" class="header__nav-link">Gift Guide</a></li>
+            <li><a href="#entourage" class="header__nav-link">Entourage</a></li>
+            <!-- <li><a href="#gallery" class="header__nav-link">Gallery</a></li> -->
+            <li><a href="#rsvp" class="header__nav-link">RSVP</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <section class="banner section-show">
-      <div class="swiper banner-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div
-              class="parallax-bg"
-              data-swiper-parallax="-20%"
-              style="background-image: url('./images/Wedding.png')"
-            ></div>
-            <div class="slide-content">
-              <h1 class="banner__title" data-swiper-parallax="-300">
-                The Marriage of
-              </h1>
-              <p class="banner__subtitle" data-swiper-parallax="-200">
-                KIM and SUNDY
-              </p>
-              <button class="banner__rsvp-btn" data-target="rsvp">
-                RSVP Now
-              </button>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div
-              class="parallax-bg"
-              data-swiper-parallax="-20%"
-              style="background-image: url('./images/Church.png')"
-            ></div>
-            <div class="slide-content">
-              <h2 data-swiper-parallax="-300">Kim & Sundy</h2>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div
-              class="parallax-bg"
-              data-swiper-parallax="-20%"
-              style="background-image: url('./images/Recep.png')"
-            ></div>
-            <div class="slide-content">
-              <h2 data-swiper-parallax="-300">Save the Date</h2>
-            </div>
-          </div>
-        </div>
-
-        <!-- Custom Pagination Class -->
-        <div class="swiper-pagination custom-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
-
-      <!-- Share Trigger -->
-      <div class="banner__share-trigger" id="banner-share-trigger">Share</div>
-
-      <!-- Share modal -->
-      <div id="share-modal" class="share-modal">
-        <div class="share-modal__content">
-          <span id="share-modal-close" class="share-modal__close">&times;</span>
-          <h3 class="share-modal__title">Share this wedding</h3>
-          <div class="share-modal__icons">
-            <a id="share-fb" href="#" target="_blank" rel="noopener"
-              >Facebook</a
-            >
-            <a id="share-twitter" href="#" target="_blank" rel="noopener"
-              >Twitter</a
-            >
-            <a
-              id="share-ig"
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noopener"
-              >Instagram</a
-            >
-            <a id="share-viber" href="#" target="_blank" rel="noopener"
-              >Viber</a
-            >
-            <a id="share-whatsapp" href="#" target="_blank" rel="noopener"
-              >WhatsApp</a
-            >
-            <a id="share-telegram" href="#" target="_blank" rel="noopener"
-              >Telegram</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- main page -->
+    <!-- Main Content -->
     <main>
-      <!-- About Section -->
-      <section id="about" class="about section">
-        <div class="about__container container">
-          <h2 class="about__title">About Us</h2>
-
-          <div class="about__content row">
-            <div class="about__image-wrapper col-lg-6">
-              <figure class="about__image-box">
-                <img
-                  src="images/Church.png"
-                  alt="Church"
-                  class="about__image"
-                />
-                <img
-                  src="images/Recep.png"
-                  alt="Reception venue"
-                  class="about__image about__image--corner"
-                />
-              </figure>
-            </div>
-
-            <div class="about__text-wrapper col-lg-6">
-              <div class="about__background"></div>
-
-              <h3 class="about__subtitle">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Deleniti, dignissimos?
-              </h3>
-
-              <p class="about__paragraph">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                commodi cum vel nam debitis nemo, laboriosam sunt eius sapiente
-                laborum sequi eveniet vitae? Laboriosam voluptatibus nam
-                voluptatem, sit modi odit.
-              </p>
-
-              <p class="about__paragraph">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                commodi cum vel nam debitis nemo, laboriosam sunt eius sapiente
-                laborum sequi eveniet vitae? Laboriosam voluptatibus nam
-                voluptatem, sit modi odit.
-              </p>
-
-              <!-- <a href="#" class="about__button">Discover more</a> -->
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- entourage section -->
-      <section id="entourage" class="entourage section">
-        <div class="container entourage__container">
-          <h2 class="entourage__title">Wedding Entourage</h2>
-
-          <div class="entourage__accordion accordion" id="entourageAccordion">
-            <!-- Principal Sponsors -->
-            <article class="entourage__group accordion-item">
-              <h3 class="accordion-header" id="headingPrincipal">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapsePrincipal"
-                  aria-expanded="true"
-                  aria-controls="collapsePrincipal"
-                >
-                  Principal Sponsors
-                </button>
-              </h3>
-              <div
-                id="collapsePrincipal"
-                class="accordion-collapse collapse show"
-                aria-labelledby="headingPrincipal"
-                data-bs-parent="#entourageAccordion"
-              >
-                <div class="accordion-body entourage__list-wrapper">
-                  <ul class="entourage__list">
-                    <li class="entourage__item">Heidi Aspa</li>
-                    <li class="entourage__item">Engr. Art Aspa</li>
-                    <li class="entourage__item">Cristina Caga</li>
-                    <li class="entourage__item">Judge Charity Grace Rico</li>
-                    <li class="entourage__item">Melvin Bojos</li>
-                    <li class="entourage__item">Dr. Marleen Nable</li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-
-            <!-- Best Man & Maid of Honor -->
-            <article class="entourage__group accordion-item">
-              <h3 class="accordion-header" id="headingBestMaid">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseBestMaid"
-                  aria-expanded="false"
-                  aria-controls="collapseBestMaid"
-                >
-                  Best Man & Maid of Honor
-                </button>
-              </h3>
-              <div
-                id="collapseBestMaid"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingBestMaid"
-                data-bs-parent="#entourageAccordion"
-              >
-                <div class="accordion-body entourage__list-wrapper">
-                  <ul class="entourage__list">
-                    <li class="entourage__item">Engr. Mark Anthony S. Caga</li>
-                    <li class="entourage__item">Engr. Menchie R. Nankil</li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-
-            <!-- Bridesmaids & Groomsmen -->
-            <article class="entourage__group accordion-item">
-              <h3 class="accordion-header" id="headingBridalParty">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseBridalParty"
-                  aria-expanded="false"
-                  aria-controls="collapseBridalParty"
-                >
-                  Bridesmaids & Groomsmen
-                </button>
-              </h3>
-              <div
-                id="collapseBridalParty"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingBridalParty"
-                data-bs-parent="#entourageAccordion"
-              >
-                <div class="accordion-body entourage__list-wrapper">
-                  <div class="entourage__subgroup">
-                    <strong class="entourage__label">Bridesmaids:</strong>
-                    <ul class="entourage__list">
-                      <li class="entourage__item">Camille Ann S. Caga, RPh</li>
-                      <li class="entourage__item">Rona Fabillar</li>
-                      <li class="entourage__item">Ma. Celina Baltazar</li>
-                    </ul>
-                  </div>
-                  <div class="entourage__subgroup">
-                    <strong class="entourage__label">Groomsmen:</strong>
-                    <ul class="entourage__list">
-                      <li class="entourage__item">Bruno Pereira</li>
-                      <li class="entourage__item">Miguel Remo</li>
-                      <li class="entourage__item">Engr. John Patrick Vea</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Ceremony Roles -->
-            <article class="entourage__group accordion-item">
-              <h3 class="accordion-header" id="headingCeremonyRoles">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseCeremonyRoles"
-                  aria-expanded="false"
-                  aria-controls="collapseCeremonyRoles"
-                >
-                  Ceremony Roles (Bearers, Veil, Cord, Candle)
-                </button>
-              </h3>
-              <div
-                id="collapseCeremonyRoles"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingCeremonyRoles"
-                data-bs-parent="#entourageAccordion"
-              >
-                <div class="accordion-body entourage__list-wrapper">
-                  <ul class="entourage__list">
-                    <li class="entourage__item">
-                      <strong>Ring Bearer:</strong> Gavin Scott Ganaden
-                    </li>
-                    <li class="entourage__item">
-                      <strong>Bible Bearer:</strong> Haven Gil Anthony Requeza
-                    </li>
-                    <li class="entourage__item">
-                      <strong>Coin Bearer:</strong> Jaden Charlemagne Vea
-                    </li>
-                    <li class="entourage__item">
-                      <strong>Veil:</strong> Ahlia Zain Margarethe Nankil,
-                      Cherry Joy Bucio
-                    </li>
-                    <li class="entourage__item">
-                      <strong>Cord:</strong> Russel Ganaden
-                    </li>
-                    <li class="entourage__item">
-                      <strong>Candle:</strong> Piero Sebastian Caga, Hannah
-                      Grace Cristine Nankil
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-
-            <!-- Flower Girls -->
-            <article class="entourage__group accordion-item">
-              <h3 class="accordion-header" id="headingFlowerGirls">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFlowerGirls"
-                  aria-expanded="false"
-                  aria-controls="collapseFlowerGirls"
-                >
-                  Flower Girls
-                </button>
-              </h3>
-              <div
-                id="collapseFlowerGirls"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingFlowerGirls"
-                data-bs-parent="#entourageAccordion"
-              >
-                <div class="accordion-body entourage__list-wrapper">
-                  <ul class="entourage__list">
-                    <li class="entourage__item">Eira Ysabel F. Santiago</li>
-                    <li class="entourage__item">
-                      Avery Caitlyn Antoniette Requeza
-                    </li>
-                    <li class="entourage__item">
-                      Ysabelle Marie Antonette Villanueva
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-      <!-- gallery section -->
-      <section id="gallery" class="gallery section">
-        <div class="gallery__container container">
-          <h2 class="gallery__title">Gallery</h2>
-
-          <!-- Optional filter buttons -->
-          <div class="gallery__filters">
-            <button class="gallery__filter-button" data-filter="*">
-              Show All
+      <section id="home" class="section banner">
+        <!-- Share Modal -->
+        <div id="share-modal" class="share-modal">
+          <div class="share-modal__content">
+            <button class="share-modal__close" id="share-close-btn">
+              &times;
             </button>
-            <button class="gallery__filter-button" data-filter=".portrait">
-              Portrait
-            </button>
-            <button class="gallery__filter-button" data-filter=".landscape">
-              Landscape
-            </button>
-          </div>
-
-          <!-- Isotope grid -->
-          <div class="gallery__grid">
-            <div class="gallery__item portrait">
-              <div class="gallery__item-inner">
-                <a
-                  href="images/wedding-1.jpg"
-                  class="glightbox"
-                  data-gallery="wedding-gallery"
-                  data-title="Bride Portrait"
-                  data-description="Shot at golden hour near the altar."
-                >
-                  <img
-                    src="images/wedding-1.jpg"
-                    alt="Bride Portrait"
-                    class="gallery__image"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <div class="gallery__item landscape">
-              <div class="gallery__item-inner">
-                <a
-                  href="images/Wedding.png"
-                  class="glightbox"
-                  data-gallery="wedding-gallery"
-                  data-title="Wedding"
-                  data-description="Damn damn damn"
-                >
-                  <img
-                    src="images/Wedding.png"
-                    alt="Bride Portrait"
-                    class="gallery__image"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <div class="gallery__item portrait">
-              <div class="gallery__item-inner">
-                <a
-                  href="images/wedding-1.jpg"
-                  class="glightbox"
-                  data-gallery="wedding-gallery"
-                  data-title="Bride Portrait"
-                  data-description="Shot at golden hour near the altar."
-                >
-                  <img
-                    src="images/wedding-1.jpg"
-                    alt="Bride Portrait"
-                    class="gallery__image"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <div class="gallery__item landscape">
-              <div class="gallery__item-inner">
-                <a
-                  href="images/Wedding.png"
-                  class="glightbox"
-                  data-gallery="wedding-gallery"
-                  data-title="Wedding"
-                  data-description="Damn damn damn"
-                >
-                  <img
-                    src="images/Wedding.png"
-                    alt="Bride Portrait"
-                    class="gallery__image"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <div class="gallery__item portrait">
-              <div class="gallery__item-inner">
-                <a
-                  href="images/wedding-1.jpg"
-                  class="glightbox"
-                  data-gallery="wedding-gallery"
-                  data-title="Bride Portrait"
-                  data-description="Shot at golden hour near the altar."
-                >
-                  <img
-                    src="images/wedding-1.jpg"
-                    alt="Bride Portrait"
-                    class="gallery__image"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <div class="gallery__item landscape">
-              <div class="gallery__item-inner">
-                <a
-                  href="images/Wedding.png"
-                  class="glightbox"
-                  data-gallery="wedding-gallery"
-                  data-title="Wedding"
-                  data-description="Damn damn damn"
-                >
-                  <img
-                    src="images/Wedding.png"
-                    alt="Bride Portrait"
-                    class="gallery__image"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <div class="gallery__item portrait">
-              <div class="gallery__item-inner">
-                <a
-                  href="images/wedding-1.jpg"
-                  class="glightbox"
-                  data-gallery="wedding-gallery"
-                  data-title="Bride Portrait"
-                  data-description="Shot at golden hour near the altar."
-                >
-                  <img
-                    src="images/wedding-1.jpg"
-                    alt="Bride Portrait"
-                    class="gallery__image"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <div class="gallery__item landscape">
-              <div class="gallery__item-inner">
-                <a
-                  href="images/Wedding.png"
-                  class="glightbox"
-                  data-gallery="wedding-gallery"
-                  data-title="Wedding"
-                  data-description="Damn damn damn"
-                >
-                  <img
-                    src="images/Wedding.png"
-                    alt="Bride Portrait"
-                    class="gallery__image"
-                  />
-                </a>
-              </div>
-            </div>
-            <!-- Add more using the same structure -->
-          </div>
-        </div>
-      </section>
-      <!-- contact section -->
-      <section id="rsvp" class="rsvp section">
-        <div class="rsvp__container container">
-          <h2 class="rsvp__title text-center">RSVP</h2>
-          <h4 class="rsvp__subtitle text-muted">
-            We have only reserved one seat per person who is invited.
-          </h4>
-
-          <form
-            id="rsvp-form"
-            action="https://formsubmit.co/anastasiacaitcaga@gmail.com"
-            method="POST"
-            class="rsvp-form"
-          >
-            <!-- Hidden Config -->
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_subject" value="New RSVP Submission" />
-            <input type="hidden" name="_template" value="box" />
-
-            <div class="rsvp__group">
-              <label for="name" class="rsvp__label visually-hidden"
-                >Your Name</label
+            <h3 class="modal-heading">Join us on our special day!</h3>
+            <hr />
+            <p>Share this link via</p>
+            <div class="share-icons">
+              <a
+                href="https://www.facebook.com/sharer/sharer.php?u=https://kxswedding.netlify.app"
+                target="_blank"
+                class="icon facebook"
+                aria-label="Share on Facebook"
               >
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                class="icon instagram"
+                aria-label="Share on Instagram"
+              >
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+              <a
+                href="https://twitter.com/intent/tweet?url=https://kxswedding.netlify.app"
+                target="_blank"
+                class="icon x"
+                aria-label="Share on X"
+              >
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+              <a
+                href="viber://forward?text=https://kxswedding.netlify.app"
+                class="icon viber"
+                aria-label="Share on Viber"
+              >
+                <!-- Viber SVG here -->
+              </a>
+              <a
+                href="https://wa.me/?text=https://kxswedding.netlify.app"
+                target="_blank"
+                class="icon whatsapp"
+                aria-label="Share on WhatsApp"
+              >
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </a>
+              <a
+                href="https://t.me/share/url?url=https://kxswedding.netlify.app"
+                target="_blank"
+                class="icon telegram"
+                aria-label="Share on Telegram"
+              >
+                <ion-icon name="paper-plane-outline"></ion-icon>
+              </a>
+            </div>
+            <p>Or copy link</p>
+            <div class="copy-box">
               <input
                 type="text"
-                name="name"
-                id="name"
-                class="rsvp__input form-control"
-                placeholder="Your Name"
-                required
+                id="share-link"
+                value="https://kxswedding.netlify.app"
+                readonly
               />
+              <button id="copy-btn">Copy</button>
             </div>
+          </div>
+        </div>
 
-            <div class="rsvp__group">
-              <label for="attendance" class="rsvp__label visually-hidden"
-                >Will you attend?</label
-              >
-              <select
-                name="attendance"
-                id="attendance"
-                class="rsvp__select form-select"
-                required
-              >
-                <option value="" disabled selected>Will you attend?</option>
-                <option value="Yes, I will attend">Yes, I will attend</option>
-                <option value="No, I can't make it">No, I can't make it</option>
-              </select>
-            </div>
+        <!-- Share Button -->
+        <button id="share-btn" class="share-btn" aria-label="Share this">
+          <ion-icon name="share-social-outline"></ion-icon>
+        </button>
 
-            <div class="rsvp__group">
-              <label for="message" class="rsvp__label visually-hidden"
-                >Message</label
-              >
-              <textarea
-                name="message"
-                id="message"
-                class="rsvp__textarea form-control"
-                rows="4"
-                placeholder="Message for the couple"
-              ></textarea>
-            </div>
-
-            <div class="rsvp__actions text-center">
-              <button type="submit" class="rsvp__button rsvp-button">
-                Send RSVP
-              </button>
-            </div>
-          </form>
+        <!-- Banner Content -->
+        <div class="banner__content flow">
+          <article class="banner__title">The Marriage of</article>
+          <h1>Kim & Sundy</h1>
+          <button
+            class="btn"
+            onclick="document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' })"
+          >
+            RSVP Now
+          </button>
         </div>
       </section>
 
-      <!-- RSVP Success Modal -->
-      <div id="rsvp-modal" class="rsvp-modal">
-        <div class="rsvp-modal__content">
-          <h2 class="rsvp-modal__title">🎉 Thank you for your RSVP!</h2>
-          <p class="rsvp-modal__text">
-            We’re excited to see you at the celebration.
-          </p>
-          <button class="rsvp-modal__close" id="rsvp-modal-close">Close</button>
+      <!-- save the date -->
+      <section class="section save-date" id="save-the-date">
+        <div class="save-date__content">
+          <h2 class="save-date__heading">Save the Date</h2>
+          <p class="save-date__text">September 4, 2025</p>
+          <p class="save-date__text">St. Benedict Parish Church</p>
+          <p class="save-date__text">Silang Cavite</p>
         </div>
-      </div>
+      </section>
+
+      <!-- <section id="about" class="section about">...</section> -->
+      <section id="attire" class="section attire flow container">
+        <h2 class="section__title">Attire</h2>
+        <div class="flex-container flow">
+          <div class="attire__item">
+            <h3 class="attire__label">Female Sponsors</h3>
+            <img
+              src="./images/attire-female-sponsor.png"
+              alt="Emerald Green Dress"
+              class="attire__image"
+            />
+            <p class="attire__description">Emerald Green Dress</p>
+          </div>
+
+          <div class="attire__item">
+            <h3 class="attire__label">Bridesmaids</h3>
+            <img
+              src="./images/attire-bridesmaid.png"
+              alt="Tulle Dress Sage Green"
+              class="attire__image"
+            />
+            <p class="attire__description">Tulle Dress Sage Green</p>
+          </div>
+
+          <div class="attire__item">
+            <h3 class="attire__label">Male Sponsors & Groomsmen</h3>
+            <img
+              src="./images/attire-male.png"
+              alt="Navy Blue Suit"
+              class="attire__image"
+            />
+            <p class="attire__description">
+              Navy Blue Suit,<br />
+              Sage Green Tie with White Longsleeves
+            </p>
+          </div>
+
+          <div class="attire__item">
+            <h3 class="attire__label">Guests</h3>
+            <div class="attire__swatches">
+              <span class="swatch" style="background: #2f4632"></span>
+              <span class="swatch" style="background: #5e8156"></span>
+              <span class="swatch" style="background: #a7b98b"></span>
+              <span class="swatch" style="background: #dce4cc"></span>
+            </div>
+            <p class="attire__description">Formal Wear</p>
+          </div>
+        </div>
+      </section>
+      <section id="gift" class="section gift">
+        <div class="container flow">
+          <h2 class="gift__title">Gift Guide</h2>
+          <p class="gift__message">
+            Your presence at our wedding means the world to us. As we start our
+            journey together, we kindly ask for your support through a monetary
+            gift in place of traditional presents. Your generosity will help us
+            build our future, and for that, we are truly grateful.
+          </p>
+
+          <div class="gift__qr">
+            <div class="gift__qr-box">
+              <img src="./images/qr1.png" alt="Bank QR 1" />
+              <p>BDO account</p>
+            </div>
+            <div class="gift__qr-box">
+              <img src="./images/qr2.png" alt="Bank QR 2" />
+              <p>BPI account</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="entourage" class="section entourage">
+        <div class="container flow">
+          <h2 class="section-title">Entourage</h2>
+
+          <div class="entourage__group">
+            <h3 class="entourage__role">Parents of the Groom</h3>
+            <p class="entourage__item">
+              Engr. Rodel G. Caga & Sheila Caga, RPh <br />Ma. Cleofe L.
+              Selloria
+            </p>
+          </div>
+
+          <div class="entourage__group">
+            <h3 class="entourage__role">Parents of the Bride</h3>
+            <p class="entourage__item">
+              Mr. Alex N. Nankil & Maribeth R. Nankil
+            </p>
+          </div>
+
+          <div class="entourage__group">
+            <h3 class="entourage__role">Principal Sponsors</h3>
+            <ul class="entourage__list">
+              <li class="entourage__item">
+                Mr. Domingo N. Valenzuela & Mrs. Lourdes S. Valenzuela
+              </li>
+              <li class="entourage__item">
+                Mr. Joel M. Tolentino & Mrs. Estrellita G. Tolentino
+              </li>
+            </ul>
+          </div>
+
+          <div class="entourage__group">
+            <h3 class="entourage__role">Secondary Sponsors</h3>
+            <ul class="entourage__list">
+              <li class="entourage__item">
+                <strong>Candle:</strong> Cristina D. Balbuena & Benita A.
+                Balbuena
+              </li>
+              <li class="entourage__item">
+                <strong>Veil:</strong> Rowena C. Estrella & Cristy C. Asuncion
+              </li>
+              <li class="entourage__item">
+                <strong>Cord:</strong> Christian C. Asuncion & Chester T.
+                Estrella
+              </li>
+            </ul>
+          </div>
+
+          <div class="entourage__group">
+            <h3 class="entourage__role">Best Man</h3>
+            <p class="entourage__item">Vincent James C. Caga</p>
+          </div>
+
+          <div class="entourage__group">
+            <h3 class="entourage__role">Maid of Honor</h3>
+            <p class="entourage__item">Kimberly D. Balbuena</p>
+          </div>
+
+          <div class="entourage__group">
+            <h3 class="entourage__role">Groomsmen & Bridesmaids</h3>
+            <ul class="entourage__list">
+              <li class="entourage__item">
+                John Vincent A. De Dios & Mary Christine G. Reyes
+              </li>
+              <li class="entourage__item">
+                Jose Carlos A. Reyes & Karylle T. Estrella
+              </li>
+              <li class="entourage__item">
+                James Christian C. Caga & Kaye Estrella
+              </li>
+              <li class="entourage__item">
+                Christian C. Caga & Janina Estrella
+              </li>
+            </ul>
+          </div>
+
+          <div class="entourage__group">
+            <h3 class="entourage__role">Bible Bearer</h3>
+            <p class="entourage__item">Zian D. Balbuena</p>
+          </div>
+
+          <div class="entourage__group">
+            <h3 class="entourage__role">Ring Bearer</h3>
+            <p class="entourage__item">Enzo C. Asuncion</p>
+          </div>
+
+          <div class="entourage__group">
+            <h3 class="entourage__role">Coin Bearer</h3>
+            <p class="entourage__item">Zeke C. Asuncion</p>
+          </div>
+
+          <div class="entourage__group">
+            <h3 class="entourage__role">Flower Girls</h3>
+            <ul class="entourage__list">
+              <li class="entourage__item">Zaya C. Asuncion</li>
+              <li class="entourage__item">Zara C. Asuncion</li>
+            </ul>
+          </div>
+
+          <div class="entourage__group">
+            <h3 class="entourage__role">Officiant</h3>
+            <p class="entourage__item">Rev. Fr. Raul G. Caga, Svd</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section id="gallery" class="section gallery">...</section> -->
+      <section id="rsvp" class="section rsvp">
+        <div class="container flow">
+          <h2 class="rsvp__title">RSVP</h2>
+          <form
+            id="rsvp-form"
+            class="rsvp__form"
+            action="https://formsubmit.co/anastasiacaitcaga@gmail.com"
+            method="POST"
+          >
+            <!-- Honeypot field to prevent spam bots -->
+            <input type="text" name="_honey" style="display: none" />
+
+            <!-- Disable CAPTCHA -->
+            <input type="hidden" name="_captcha" value="false" />
+
+            <div class="form-group">
+              <label for="name">Your Full Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label>Will you attend?</label>
+              <div class="form-options">
+                <label>
+                  <input
+                    type="radio"
+                    name="attendance"
+                    value="Yes, I will attend"
+                    required
+                  />
+                  Yes, I will attend
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="attendance"
+                    value="No, I can't attend"
+                    required
+                  />
+                  No, I can't attend
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Leave a message</label>
+              <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn">RSVP Now</button>
+          </form>
+          <!-- Success Modal -->
+          <div
+            id="rsvp-success-modal"
+            class="modal-overlay"
+            style="display: none"
+          >
+            <div class="modal-content">
+              <h3 class="modal-heading">Thank you for your RSVP!</h3>
+              <p class="modal-message">
+                We are truly honored to have you celebrate this special day with
+                us.<br />
+                Your presence means the world to us.
+              </p>
+              <button class="btn" id="modal-close-btn">Close</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- javascript vendors -->
+    <footer>...</footer>
+
+    <!-- Scripts -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -705,16 +485,9 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- custom js -->
+    <!-- Your Custom JS -->
     <script src="isotope.js"></script>
     <script src="glightbox.js"></script>
     <script src="script.js"></script>
