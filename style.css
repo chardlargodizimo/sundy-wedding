@@ -12,7 +12,7 @@
   --fs-lg: clamp(1.8rem, 5.536vw + 0.029rem, 8rem);
   --fs-md: clamp(1.5rem, 4.42vw + -0.157rem, 5.5rem);
   --fs-sm: clamp(1.25rem, 0.276vw + 1.146rem, 1.5rem);
-  --fs-xs: clamp(1rem, 0.552vw + 0.793rem, 1.5rem);
+  --fs-xs: clamp(0.5rem, 0.552vw + 0.793rem, 1.5rem);
 }
 
 /* Reset & base */
@@ -664,6 +664,11 @@ a {
   padding: 0;
 }
 
+.entourage__list-wrapper {
+  align-items: center;
+  justify-content: center;
+}
+
 .entourage__item {
   font-size: var(--fs-sm);
   margin-bottom: 0.5rem;
@@ -881,110 +886,21 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-.slide-content--centered {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 1rem;
-  flex-direction: column;
-  gap: 20px;
-  top: 15%;
-}
-
-.location-stack {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.location-image {
-  z-index: 2;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  position: relative;
-  width: 80%;
-}
-
-.location-info {
-  background: var(--clr-secondary);
-  padding: 9rem 1rem 3rem 1rem;
-  width: 100%;
-  text-align: center;
-  margin-top: -7.5rem;
-  z-index: 1;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.location-name {
-  font-family: var(--font-secondary);
-  font-size: var(--fs-sm);
-  color: var(--clr-primary);
-  margin: 0;
-}
-
-.map-btn {
-  margin-top: 1.25rem;
-  background: var(--clr-primary);
-  color: var(--clr-secondary);
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease;
-  position: absolute;
-  left: 50%;
-  bottom: -20px;
-  transform: translate(-50%);
-  z-index: 12;
-  transform: translate(-50%);
-}
-.map-btn:hover {
-  background: #184b35;
-}
-
-@media screen and (min-width: 979px) {
-  .banner h1{
-    margin: 0;
-  }}
-  .slide-content {
-    top: 18%;
+@media screen and (min-width: 557px) {
+  .banner h1 {
     margin: 0;
   }
-  .location-stack {
-    max-width: 1280px;
+
+  .entourage__list--group1 {
+    text-align: right;
   }
 
-  .slide-content--centered {
-    top: 8%;
+  .entourage__list--group2 {
+    text-align: left;
   }
 
-  .location-image {
-    width: 400px;
-    left: -10rem;
-  }
-
-  .location-info {
-    width: 85%;
-    margin-top: -14.5rem;
-    padding: 2rem 2rem 10rem 30rem;
-  }
-
-  .map-btn {
-    width: 6rem;
-    height: 6rem;
-    left: unset;
-    bottom: -2.25rem;
-    right: 6rem;
-  }
-
-  .map-btn ion-icon {
-    font-size: 2.5rem;
+  .entourage__list-wrapper {
+    margin-left: -2.25rem;
+    gap: 4rem;
   }
 }
