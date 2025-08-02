@@ -647,7 +647,7 @@ a {
 }
 
 .entourage__group {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .entourage__role {
@@ -665,8 +665,8 @@ a {
 }
 
 .entourage__list-wrapper {
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
 }
 
 .entourage__item {
@@ -891,16 +891,18 @@ input[type="radio"] {
     margin: 0;
   }
 
-  .entourage__list--group1 {
-    text-align: right;
+  .entourage {
+    text-align: center;
   }
 
+  .entourage__list--group1,
   .entourage__list--group2 {
     text-align: left;
   }
 
   .entourage__list-wrapper {
-    margin-left: -2.25rem;
+    display: flex;
+    justify-content: center;
     gap: 4rem;
   }
 }
